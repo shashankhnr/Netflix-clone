@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./package.json .
 COPY ./yarn.lock .
 RUN yarn config set registry https://registry.yarnpkg.com
-RUN yarn install --network-timeout 100000
+RUN yarn install --network-timeout 600000
 COPY . .
 ARG TMDB_V3_API_KEY
 ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY}
